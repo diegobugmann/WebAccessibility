@@ -8338,3 +8338,8 @@ a.text-dark:hover {
         border: 1px solid #ddd !important
     }
 }
+
+.center{
+    display: table;
+    margin: 0 auto;btn
+}
