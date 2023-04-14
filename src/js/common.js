@@ -48,3 +48,19 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.navbar-toggler')
         .addEventListener('click', toggleNavigation, false);
 }, false);
+
+const body = document.querySelector('body');
+const increaseButton = document.querySelector('.font-increase-button');
+const decreaseButton = document.querySelector('.font-decrease-button');
+
+increaseButton.addEventListener('click', () => {
+  body.style.fontSize = parseInt(getComputedStyle(body).fontSize) + 1 + 'px';
+  increaseButton.setAttribute('aria-pressed', 'true');
+  decreaseButton.setAttribute('aria-pressed', 'false');
+});
+
+decreaseButton.addEventListener('click', () => {
+  body.style.fontSize = parseInt(getComputedStyle(body).fontSize) - 1 + 'px';
+  decreaseButton.setAttribute('aria-pressed', 'true');
+  increaseButton.setAttribute('aria-pressed', 'false');
+});

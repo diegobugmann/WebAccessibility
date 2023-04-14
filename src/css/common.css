@@ -10,7 +10,7 @@ html {
 body a,
 body div,
 body p {
-    color: #dfdfdf
+    color: #4b6660
 }
 
 body a:hover {
@@ -19,11 +19,12 @@ body a:hover {
 
 .title {
     font-size: 2rem;
-    font-weight: 100
+    font-weight: 700
 }
 
 .subtitle {
-    font-size: 1.2rem
+    font-size: 1.2rem;
+    font-weight: 600
 }
 
 .header .logo {
@@ -54,4 +55,34 @@ body a:hover {
 
 .main {
     flex: 1 0 auto
+}
+
+/* Increase/Decrease Font Size Buttons */
+.button-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.button-wrapper button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #4b6660;
+    cursor: pointer;
+    font-size: .8rem;
+    margin: 0 5px;
+    padding: 5px;
+}
+
+.button-wrapper button:hover {
+    background-color: #4b6660;
+    border: 1px solid #4b6660;
+    color: #fff;
+}
+
+/* Large Text Styles */
+.large-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
 }
