@@ -92,79 +92,6 @@ function forgot(event) {
     }
 }
 
-/**
- * Validate the login form and try to register the new user
- * @param {object} event - The DOM event
- */
-function register(event) {
-    event.preventDefault();
-    event.stopPropagation();
-
-    var hasError = false;
-
-    var firstName = document.getElementById('register-first-name-control');
-    if (firstName.value.trim().length == 0) {
-        setInvalid(firstName);
-        hasError = true;
-    } else if (firstName.validity.valid) {
-        setValid(firstName);
-    }
-
-    var lastName = document.getElementById('register-last-name-control');
-    if (lastName.value.trim().length == 0) {
-        setInvalid(lastName);
-        hasError = true;
-    } else if (lastName.validity.valid) {
-        setValid(lastName);
-    }
-
-    var email = document.getElementById('register-email-control');
-    if (email.validity.valid) {
-        setValid(email);
-    } else if (email.validity.valueMissing) {
-        setInvalid(email);
-        hasError = true;
-    } else {
-        setInvalid(email);
-        hasError = true;
-    }
-
-    var password = document.getElementById('register-password-control');
-    var passwordValue = password.value.trim();
-    if (passwordValue.length < 8) {
-        setInvalid(password);
-        hasError = true;
-    } else if (passwordValue.length > 16) {
-        setInvalid(password);
-        hasError = true;
-    } else if (passwordValue.match(/[a-zA-Z]+/) == null) {
-        setInvalid(password);
-        hasError = true;
-    } else if (passwordValue.match(/[0-9]+/) == null) {
-        setInvalid(password);
-        hasError = true;
-    } else {
-        setValid(password);
-    }
-
-    var programme = document.getElementById('register-programme-control');
-    if (programme.validity.valueMissing) {
-        setInvalid(programme);
-        hasError = true;
-    } else if (!programme.validity.valid) {
-        setInvalid(programme);
-        hasError = true;
-    } else {
-        setValid(programme);
-    }
-
-    if (hasError) {
-        document.getElementById('register-error').classList.remove('d-none');
-    } else {
-        document.getElementById('register-error').classList.add('d-none');
-    }
-}
-
 document.addEventListener('DOMContentLoaded', function() {
     document
         .getElementById('login-login-button')
@@ -173,8 +100,4 @@ document.addEventListener('DOMContentLoaded', function() {
     document
         .getElementById('login-forgot-button')
         .addEventListener('click', forgot, false);
-
-    document
-        .getElementById('register-register-button')
-        .addEventListener('click', register, false);
 }, false);
