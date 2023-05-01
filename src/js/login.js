@@ -91,7 +91,14 @@ function forgot(event) {
         document.getElementById('login-error').classList.add('d-none');
     }
 }
-
+function showPassword() {
+  var x = document.getElementById("login-password-control");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
 document.addEventListener('DOMContentLoaded', function() {
     document
         .getElementById('login-login-button')
@@ -100,4 +107,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document
         .getElementById('login-forgot-button')
         .addEventListener('click', forgot, false);
+
+
 }, false);

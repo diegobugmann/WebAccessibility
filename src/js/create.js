@@ -97,9 +97,18 @@ function register(event) {
         document.getElementById('register-error').classList.add('d-none');
     }
 }
+function showPassword() {
+  var x = document.getElementById("register-password-control");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     document
         .getElementById('register-register-button')
         .addEventListener('click', register, false);
+
 }, false);
