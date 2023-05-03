@@ -316,7 +316,7 @@ textarea {
 }
 
 fieldset {
-    display: block;
+display: block;
   margin-left: 2px;
   margin-right: 2px;
   padding-top: 0.35em;
@@ -3623,7 +3623,8 @@ tbody.collapse.show {
     flex-wrap: wrap;
     padding-left: 0;
     margin-bottom: 0;
-    list-style: none
+    list-style: none;
+    background-color: #fff;
 }
 
 .nav-link {
@@ -3667,7 +3668,7 @@ tbody.collapse.show {
 
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
-    color: #495057;
+    color: #4b6660;
     background-color: #fff;
     border-color: #dee2e6 #dee2e6 #fff
 }

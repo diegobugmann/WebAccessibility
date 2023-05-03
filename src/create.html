@@ -39,82 +39,66 @@
         <div class="container">
             <div class="navbar navbar-dark bg-dark navbar-expand-lg px-0">
                 <div class="navbar-brand d-lg-none">
-                    <img class="rounded-right" src="./img/logo.jpg" width="40" height="40">
+                    <img class="rounded-right" src="./img/logo.jpg" width="40" height="40"
+                        alt="Lorem Ipsum Institute Logo">
                 </div>
                 <button class="navbar-toggler" type="button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="nav-bar-content">
-                    <div class="navbar-nav mr-auto">
-                        <div class="nav-item">
+                <nav class="collapse navbar-collapse justify-content-between" id="nav-bar-content">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
                             <a class="nav-link" href="./">Homepage</a>
-                        </div>
-                        <div class="nav-item dropdown">
+                        </li>
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="nav-bar-faculties">Faculties</a>
                             <div class="dropdown-menu">
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Applied+sciences">Applied sciences</a>
-                                </div>
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Architecture+%26+planning">Architecture &amp; planning</a>
-                                </div>
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Construction+%26+environment">Construction &amp; environment</a>
-                                </div>
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Engineering">Engineering</a>
-                                </div>
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Health+%26+social+sciences">Health &amp; social sciences</a>
-                                </div>
+                                <a class="dropdown-item" href="./empty.html?title=Applied+sciences">Applied
+                                    sciences</a>
+                                <a class="dropdown-item"
+                                    href="./empty.html?title=Architecture+%26+planning">Architecture
+                                    &amp;
+                                    planning</a>
+                                <a class="dropdown-item"
+                                    href="./empty.html?title=Construction+%26+environment">Construction
+                                    &amp; environment</a>
+                                <a class="dropdown-item" href="./empty.html?title=Engineering">Engineering</a>
+                                <a class="dropdown-item" href="./empty.html?title=Health+%26+social+sciences">Health
+                                    &amp;
+                                    social
+                                    sciences</a>
                             </div>
-                        </div>
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-education">Education &amp; research</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-education">Education &amp;
+                                research</a>
                             <div class="dropdown-menu">
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Bachelor">Bachelor</a>
-                                </div>
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Master">Master</a>
-                                </div>
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Continuing+education">Continuing education</a>
-                                </div>
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Doctorate">Doctorate</a>
-                                </div>
+                                <a class="dropdown-item" href="./empty.html?title=Bachelor">Bachelor</a>
+                                <a class="dropdown-item" href="./empty.html?title=Master">Master</a>
+                                <a class="dropdown-item" href="./empty.html?title=Continuing+education">Continuing
+                                    education</a>
+                                <a class="dropdown-item" href="./empty.html?title=Doctorate">Doctorate</a>
                             </div>
-                        </div>
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-industry">Industry &amp; partners</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-industry">Industry &amp;
+                                partners</a>
                             <div class="dropdown-menu">
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Public+relations">Public relations</a>
-                                </div>
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Commercialization">Commercialization</a>
-                                </div>
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Sponsors+%26+partners">Sponsors &amp; partners</a>
-                                </div>
+                                <a class="dropdown-item" href="./empty.html?title=Public+relations">Public
+                                    relations</a>
+                                <a class="dropdown-item"
+                                    href="./empty.html?title=Commercialization">Commercialization</a>
+                                <a class="dropdown-item" href="./empty.html?title=Sponsors+%26+partners">Sponsors &amp;
+                                    partners</a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="navbar-nav">
-                        <div class="nav-item">
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
                             <a class="nav-link" href="./login.html">Login</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="d-lg-none">
-                <div class="btn-toolbar justify-content-end">
-                    <div class="btn-group btn-group-sm">
-                        <button class="btn btn-dark text-white font-increase-button" id="font-increase-button-1">A+</button>
-                        <button class="btn btn-dark text-white font-decrease-button" id="font-decrease-button-1">A-</button>
-                    </div>
-                </div>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
@@ -200,8 +184,34 @@
                         <button class="btn btn-primary" id="register-register-button">Register</button>
                     </form>
                 </div>
-            </div>
+                <div class="form-group">
+                    <p class="form-label" id="register-address-legend">Additional information
+                        <small class="text-secondary">(optional)</small>
+                    </p>
+                    <div class="form-group">
+                        <p>Street</p>
+                        <input class="form-control" id="register-street-control" type="text" placeholder="Street">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-12 col-lg-5">
+                            <p>City</p>
+                            <input class="form-control" id="register-city-control" type="text" placeholder="City">
+                        </div>
+                        <div class="form-group col-12 col-lg-4">
+                            <p>State</p>
+                            <input class="form-control" id="register-state-control" type="text" placeholder="State">
+                        </div>
+                        <div class="form-group col-12 col-lg-3">
+                            <p>Zip</p>
+                            <input class="form-control" id="register-zip-control" type="text" placeholder="Zip">
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="register-register-button">Register</button>
+            </form>
         </div>
+    </div>
+    </div>
     </div>
 
     <div class="container-fluid bg-dark mt-4 footer">
@@ -210,7 +220,8 @@
                 <a class="col-12 col-md mr-3 text-white" href="./empty.html?title=About">About</a>
                 <a class="col-12 col-md mr-3 text-white" href="./empty.html?title=Contact+us">Contact us</a>
                 <a class="col-12 col-md mr-3 text-white" href="./empty.html?title=Help">Help</a>
-                <a class="col-12 col-md mr-3 text-white" href="./empty.html?title=Terms+of+services">Terms of service</a>
+                <a class="col-12 col-md mr-3 text-white" href="./empty.html?title=Terms+of+services">Terms of
+                    service</a>
                 <a class="col-12 col-md mr-3 text-white" href="./empty.html?title=Privacy+policy">Privacy policy</a>
             </div>
         </div>
