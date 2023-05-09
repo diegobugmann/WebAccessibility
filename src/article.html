@@ -12,7 +12,8 @@
 </head>
 
 <body class="d-flex flex-column bg-light">
-    <div class="container-fluid d-none d-lg-block my-4 header">
+
+    <header class="container-fluid d-none d-lg-block my-4 header" role="banner">
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-8 media">
@@ -33,9 +34,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
-    <div class="container-fluid bg-dark nav">
+    <nav class="container-fluid bg-dark nav" id="nav" role="navigation">
         <div class="container">
             <div class="navbar navbar-dark bg-dark navbar-expand-lg px-0">
                 <div class="navbar-brand d-lg-none">
@@ -44,7 +45,7 @@
                 <button class="navbar-toggler" type="button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <nav class="collapse navbar-collapse justify-content-between" id="nav-bar-content">
+                <div class="collapse navbar-collapse justify-content-between" id="nav-bar-content">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="./">Homepage</a>
@@ -97,12 +98,22 @@
                             <a class="nav-link" href="./login.html">Login</a>
                         </li>
                     </ul>
-                </nav>
+                </div>
+            </div>
+            <div class="d-lg-none">
+                <div class="btn-toolbar justify-content-end">
+                    <div class="btn-group btn-group-sm">
+                        <button class="btn btn-dark text-white font-increase-button" id="font-increase-button-1"
+                            aria-label="Increase font size">A+</button>
+                        <button class="btn btn-dark text-white font-decrease-button" id="font-decrease-button-1"
+                            aria-label="Decrease font size">A-</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <div class="container mt-4 main" id="main">
+    <main class="container mt-4 main" id="main" role="main">
         <div class="p-5 bg-white">
             <div class="text-primary text-center mb-4 title">Global temperature record shows 2016 as the warmest year on
                 record</div>
@@ -179,9 +190,9 @@
                 </table>
             </div>
         </div>
-    </div>
+    </main>
 
-    <div class="container-fluid bg-dark mt-4 footer">
+    <footer class="container-fluid bg-dark mt-4 footer" id="footer" role="contentinfo">
         <div class="container text-center py-3">
             <div class="row justify-content-around">
                 <a class="col-12 col-md mr-3 text-white" href="./empty.html?title=About">About</a>
@@ -192,7 +203,7 @@
                 <a class="col-12 col-md mr-3 text-white" href="./empty.html?title=Privacy+policy">Privacy policy</a>
             </div>
         </div>
-    </div>
+    </footer>
 
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/popper.js"></script>
