@@ -12,41 +12,53 @@
 </head>
 
 <body class="bg-light">
-    <div class="container-fluid d-none d-lg-block my-4 header">
+
+    <div class="skip-links">
+        <!-- The anchor points to the id of an element -->
+        <a class="sr-only sr-only-focusable" href="#nav">Skip to navigation</a>
+        <a class="sr-only sr-only-focusable" href="#main">Skip to main content</a>
+        <a class="sr-only sr-only-focusable" href="#footer">Skip to footer</a>
+    </div>
+
+    <header class="container-fluid d-none d-lg-block my-4 header" role="banner">
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-8 media">
                     <img class="align-self-center mr-3 rounded-right logo" src="./img/logo.jpg"
                         alt="Lorem Ipsum Institute Logo">
                     <div class="media-body align-self-center">
-                        <div class="mb-0 title">Lorem Ipsum
+                        <h1 class="mb-0 title">Lorem Ipsum
                             <br>Institute of Technology
-                        </div>
+                        </h1>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="btn-toolbar justify-content-end">
                         <div class="btn-group btn-group-sm">
-                            <button class="btn btn-dark font-increase-button" id="font-increase-button">A+</button>
-                            <button class="btn btn-dark font-decrease-button" id="font-decrease-button">A-</button>
+                            <button class="btn btn-dark font-increase-button" id="font-increase-button"
+                                aria-label="Increase font size" aria-controls="body" aria-pressed="false">A+
+                            </button>
+                            <button class="btn btn-dark font-decrease-button" id="font-decrease-button"
+                                aria-label="Decrease font size" aria-controls="body" aria-pressed="false">A-
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
-    <div class="container-fluid bg-primary nav">
+    <nav class="container-fluid bg-primary nav" id="nav" role="navigation">
         <div class="container">
             <div class="navbar navbar-primary bg-primary navbar-expand-lg px-0">
                 <div class="navbar-brand d-lg-none">
                     <img class="rounded-right" src="./img/logo.jpg" width="40" height="40"
                         alt="Lorem Ipsum Institute Logo">
                 </div>
-                <button class="navbar-toggler" type="button">
+                <button class="navbar-toggler" type="button" aria-pressed="false" aria-label="navbar toggle button" id="nav-bar-button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <nav class="collapse navbar-collapse justify-content-between" id="nav-bar-content">
+                <div class="collapse navbar-collapse justify-content-between" id="nav-bar-content">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="./">Homepage</a>
@@ -99,18 +111,27 @@
                             <a class="nav-link" href="./login.html">Login</a>
                         </li>
                     </ul>
-                </nav>
+                </div>
+            </div>
+            <div class="d-lg-none">
+                <div class="btn-toolbar justify-content-end">
+                    <div class="btn-group btn-group-sm">
+                        <button class="btn btn-dark text-white font-increase-button" id="font-increase-button-1"
+                            aria-label="Increase font size">A+</button>
+                        <button class="btn btn-dark text-white font-decrease-button" id="font-decrease-button-1"
+                            aria-label="Decrease font size">A-</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <div class="container main" id="main">
+    <main class="container main" id="main" role="main">
         <div class="row no-gutters">
             <div class="col-12 col-md-5 mt-4 login center">
                 <div class="p-4 mr-md-3 bg-white">
-                    <div class="text-primary mb-4 title">Login</div>
-                    <div class="text-danger mb-4 d-none subtitle" id="login-error" aria-live="assertive">Please correct
-                        the error(s)</div>
+                    <h1 class="text-primary mb-4 title">Login</h1>
+                    <h2 class="text-danger mb-4 d-none subtitle" id="login-error" aria-live="assertive">Please correct the error(s)</h2>
                     <ul class="sr-only" id="login-error-list"></ul>
                     <form id="login-form" novalidate>
                         <div class="form-group">
@@ -149,9 +170,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <div class="container-fluid bg-primary mt-4 footer">
+    <footer class="container-fluid bg-primary mt-4 footer" id="footer" role="contentinfo">
         <div class="container text-center py-3">
             <div class="row justify-content-around">
                 <a class="col-12 col-md mr-3 text-white" href="./empty.html?title=About">About</a>
@@ -162,7 +183,7 @@
                 <a class="col-12 col-md mr-3 text-white" href="./empty.html?title=Privacy+policy">Privacy policy</a>
             </div>
         </div>
-    </div>
+    </footer>
 
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/popper.js"></script>
