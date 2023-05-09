@@ -14,18 +14,16 @@ body p {
 }
 
 body a:hover {
-    text-decoration: underline
-    color: #cdcdcd
+    text-decoration: underline;
 }
 
 .title {
-    font-size: 2rem;
-    font-weight: 700
+    font-size: 2.1rem;
+    font-weight: 100
 }
 
 .subtitle {
     font-size: 1.2rem;
-    font-weight: 600
 }
 
 .header .logo {
