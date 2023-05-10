@@ -55,11 +55,13 @@
                     <img class="rounded-right" src="./img/logo.jpg" width="40" height="40"
                         alt="Lorem Ipsum Institute Logo">
                 </div>
-                <button class="navbar-toggler" type="button" aria-pressed="false" aria-label="navbar toggle button" id="nav-bar-button">
+                <button class="navbar-toggler" type="button" aria-pressed="false" aria-label="navbar toggle button"
+                    id="nav-bar-button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="nav-bar-content">
-                    <ul class="navbar-nav mr-auto">
+
+                    <ul class="navbar-nav mr-auto" aria-labelledby="menubutton">
                         <li class="nav-item active">
                             <a class="nav-link" href="./">Homepage</a>
                         </li>
@@ -67,10 +69,12 @@
                             <a class="nav-link dropdown-toggle" href="#" id="nav-bar-faculties">Faculties</a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="dropdown-item" href="./empty.html?title=Applied+sciences">Applied sciences</a>
+                                    <a class="dropdown-item" href="./empty.html?title=Applied+sciences">Applied
+                                        sciences</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="./empty.html?title=Architecture+%26+planning">Architecture
+                                    <a class="dropdown-item"
+                                        href="./empty.html?title=Architecture+%26+planning">Architecture
                                         &amp;
                                         planning</a>
                                 </li>
@@ -91,7 +95,8 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-education">Education &amp;
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-education" aria-haspopup="true"
+                                role="button" aria-expanded="false">Education &amp;
                                 research</a>
                             <ul class="dropdown-menu">
                                 <li>
@@ -110,7 +115,8 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-industry">Industry &amp;
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-industry" aria-haspopup="true"
+                                role="button" aria-expanded="false">Industry &amp;
                                 partners</a>
                             <ul class="dropdown-menu">
                                 <li>
@@ -122,7 +128,8 @@
                                         href="./empty.html?title=Commercialization">Commercialization</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="./empty.html?title=Sponsors+%26+partners">Sponsors &amp;
+                                    <a class="dropdown-item" href="./empty.html?title=Sponsors+%26+partners">Sponsors
+                                        &amp;
                                         partners</a>
                                 </li>
                             </ul>
@@ -153,56 +160,65 @@
             <div class="col-12 col-lg-6">
                 <div class="p-4 mt-4 mr-lg-3 bg-white news">
                     <h1 class="text-primary mb-4 title">News &amp; events</h1>
-                    <div class="media mt-4">
-                        <img class="my-1 mr-2 rounded-right" src="./img/iceberg.jpg" alt="Photo of an Iceberg">
-                        <div class="media-body">
-                            <h2 class="text-info mt-0 mb-2 subtitle">
-                                <a href="./article.html">Global temperature record</a>
-                            </h2>
-                            <p>
-                                The global surface temperature relative to 1951-1980 average recently published by NASA
-                                shows that 2016 ranks as the warmest
-                                year on record.
-                            </p>
-                            <div class="my-3 text-secondary text-right">
-                                <div>2018/01/15</div>
+                    <article>
+                        <div class="media mt-4">
+                            <img class="my-1 mr-2 rounded-right" src="./img/iceberg.jpg" alt="Photo of an Iceberg">
+                            <div class="media-body">
+                                <h2 class="text-info mt-0 mb-2 subtitle">
+                                    <a href="./article.html">Global temperature record</a>
+                                </h2>
+                                <p>
+                                    The global surface temperature relative to 1951-1980 average recently published by
+                                    NASA
+                                    shows that 2016 ranks as the warmest
+                                    year on record.
+                                </p>
+                                <div class="my-3 text-secondary text-right">
+                                    <div>2018/01/15</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="media mt-4">
-                        <img class="my-1 mr-2 rounded-right" src="./img/universe.jpg" alt="Photo of a Universe">
-                        <div class="media-body">
-                            <h2 class="text-info mt-0 mb-2 subtitle">
-                                <a href="./empty.html?title=Article">At iam decimum annum in spelunca iacet</a>
-                            </h2>
-                            <p>
-                                Immo vero, inquit, ad beatissime vivendum parum est, ad beate vero satis. Claudii
-                                libidini, qui tum erat summo ne imperio,
-                                dederetur. Ergo id est convenienter naturae vivere, a natura discedere.
-                            </p>
-                            <div class="my-3 text-secondary text-right">
-                                <div>2018/01/12</div>
+                    </article>
+                    <article>
+                        <div class="media mt-4">
+                            <img class="my-1 mr-2 rounded-right" src="./img/universe.jpg" alt="Photo of a Universe">
+                            <div class="media-body">
+                                <h2 class="text-info mt-0 mb-2 subtitle">
+                                    <a href="./empty.html?title=Article">At iam decimum annum in spelunca iacet</a>
+                                </h2>
+                                <p>
+                                    Immo vero, inquit, ad beatissime vivendum parum est, ad beate vero satis. Claudii
+                                    libidini, qui tum erat summo ne imperio,
+                                    dederetur. Ergo id est convenienter naturae vivere, a natura discedere.
+                                </p>
+                                <div class="my-3 text-secondary text-right">
+                                    <div>2018/01/12</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="media mt-4">
-                        <img class="my-1 mr-2 rounded-right" src="./img/robots.jpg" alt="Photo of a Robot">
-                        <div class="media-body">
-                            <h2 class="text-info mt-0 mb-2 subtitle">
-                                <a href="./empty.html?title=Article">Quo plebiscito decreta a senatu est consuli
-                                    quaestio Cn</a>
-                            </h2>
-                            <p>
-                                Comprehensum, quod cognitum non habet? Quia nec honesto quic quam honestius nec turpi
-                                turpius. Maximeque eos videre possumus
-                                res gestas audire et legere velle, qui a spe gerendi absunt confecti senectute. Est enim
-                                effectrix multarum et magnarum voluptatum.
-                            </p>
-                            <div class="my-3 text-secondary text-right">
-                                <div>2017/12/30</div>
+                    </article>
+                    <article>
+                        <div class="media mt-4">
+                            <img class="my-1 mr-2 rounded-right" src="./img/robots.jpg" alt="Photo of a Robot">
+                            <div class="media-body">
+                                <h2 class="text-info mt-0 mb-2 subtitle">
+                                    <a href="./empty.html?title=Article">Quo plebiscito decreta a senatu est consuli
+                                        quaestio Cn</a>
+                                </h2>
+                                <p>
+                                    Comprehensum, quod cognitum non habet? Quia nec honesto quic quam honestius nec
+                                    turpi
+                                    turpius. Maximeque eos videre possumus
+                                    res gestas audire et legere velle, qui a spe gerendi absunt confecti senectute. Est
+                                    enim
+                                    effectrix multarum et magnarum voluptatum.
+                                </p>
+                                <div class="my-3 text-secondary text-right">
+                                    <div>2017/12/30</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
             <div class="col-12 col-lg-6">
