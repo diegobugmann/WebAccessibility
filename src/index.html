@@ -36,10 +36,12 @@
                     <div class="btn-toolbar justify-content-end">
                         <div class="btn-group btn-group-sm">
                             <button class="btn btn-dark font-increase-button" id="font-increase-button"
-                                aria-label="Increase font size" aria-controls="body" aria-pressed="false">A+
+                                aria-label="Increase font size" aria-controls="body" aria-pressed="false"
+                                onclick="increaseFontSize()">A+
                             </button>
                             <button class="btn btn-dark font-decrease-button" id="font-decrease-button"
-                                aria-label="Decrease font size" aria-controls="body" aria-pressed="false">A-
+                                aria-label="Decrease font size" aria-controls="body" aria-pressed="false"
+                                onclick="decreaseFontSize()">A-
                             </button>
                         </div>
                     </div>
@@ -55,22 +57,26 @@
                     <img class="rounded-right" src="./img/logo.jpg" width="40" height="40"
                         alt="Lorem Ipsum Institute Logo">
                 </div>
-                <button class="navbar-toggler" type="button" aria-pressed="false" aria-label="navbar toggle button" id="nav-bar-button">
+                <button class="navbar-toggler bg-secondary" type="button" aria-pressed="false"
+                    aria-label="navbar toggle button" id="nav-bar-button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="nav-bar-content">
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav mr-auto" aria-labelledby="menubutton">
                         <li class="nav-item active">
                             <a class="nav-link" href="./">Homepage</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-faculties">Faculties</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-faculties" aria-haspopup="true"
+                                role="button" aria-expanded="false">Faculties</a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="dropdown-item" href="./empty.html?title=Applied+sciences">Applied sciences</a>
+                                    <a class="dropdown-item" href="./empty.html?title=Applied+sciences">Applied
+                                        sciences</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="./empty.html?title=Architecture+%26+planning">Architecture
+                                    <a class="dropdown-item"
+                                        href="./empty.html?title=Architecture+%26+planning">Architecture
                                         &amp;
                                         planning</a>
                                 </li>
@@ -91,8 +97,8 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-education">Education &amp;
-                                research</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-education" aria-haspopup="true"
+                                role="button" aria-expanded="false">Education &amp; research</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a class="dropdown-item" href="./empty.html?title=Bachelor">Bachelor</a>
@@ -110,8 +116,8 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-industry">Industry &amp;
-                                partners</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-industry" aria-haspopup="true"
+                                role="button" aria-expanded="false">Industry &amp; partners</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a class="dropdown-item" href="./empty.html?title=Public+relations">Public
@@ -122,7 +128,8 @@
                                         href="./empty.html?title=Commercialization">Commercialization</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="./empty.html?title=Sponsors+%26+partners">Sponsors &amp;
+                                    <a class="dropdown-item" href="./empty.html?title=Sponsors+%26+partners">Sponsors
+                                        &amp;
                                         partners</a>
                                 </li>
                             </ul>
@@ -153,14 +160,16 @@
             <div class="col-12 col-lg-6">
                 <div class="p-4 mt-4 mr-lg-3 bg-white news">
                     <h1 class="text-primary mb-4 title">News &amp; events</h1>
-                    <div class="media mt-4">
+
+                    <article class="media mt-4" id="article1">
                         <img class="my-1 mr-2 rounded-right" src="./img/iceberg.jpg" alt="Photo of an Iceberg">
                         <div class="media-body">
                             <h2 class="text-info mt-0 mb-2 subtitle">
                                 <a href="./article.html">Global temperature record</a>
                             </h2>
                             <p>
-                                The global surface temperature relative to 1951-1980 average recently published by NASA
+                                The global surface temperature relative to 1951-1980 average recently published by
+                                NASA
                                 shows that 2016 ranks as the warmest
                                 year on record.
                             </p>
@@ -168,8 +177,8 @@
                                 <div>2018/01/15</div>
                             </div>
                         </div>
-                    </div>
-                    <div class="media mt-4">
+                    </article>
+                    <article class="media mt-4" id="article2">
                         <img class="my-1 mr-2 rounded-right" src="./img/universe.jpg" alt="Photo of a Universe">
                         <div class="media-body">
                             <h2 class="text-info mt-0 mb-2 subtitle">
@@ -184,8 +193,8 @@
                                 <div>2018/01/12</div>
                             </div>
                         </div>
-                    </div>
-                    <div class="media mt-4">
+                    </article>
+                    <article class="media mt-4">
                         <img class="my-1 mr-2 rounded-right" src="./img/robots.jpg" alt="Photo of a Robot">
                         <div class="media-body">
                             <h2 class="text-info mt-0 mb-2 subtitle">
@@ -193,67 +202,74 @@
                                     quaestio Cn</a>
                             </h2>
                             <p>
-                                Comprehensum, quod cognitum non habet? Quia nec honesto quic quam honestius nec turpi
+                                Comprehensum, quod cognitum non habet? Quia nec honesto quic quam honestius nec
+                                turpi
                                 turpius. Maximeque eos videre possumus
-                                res gestas audire et legere velle, qui a spe gerendi absunt confecti senectute. Est enim
+                                res gestas audire et legere velle, qui a spe gerendi absunt confecti senectute. Est
+                                enim
                                 effectrix multarum et magnarum voluptatum.
                             </p>
                             <div class="my-3 text-secondary text-right">
                                 <div>2017/12/30</div>
                             </div>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
             <div class="col-12 col-lg-6">
-                <div class="p-4 mt-4 bg-white studies">
-                    <h1 class="text-primary mb-4 title">Studies</h1>
-                    <h2 class="font-weight-bold subtitle">Advance your scientific education</h2>
-                    <ul class="list-unstyled ml-3">
-                        <li>
-                            <a href="./empty.html?title=Bachelor">Bachelor programmes</a>
-                        </li>
-                        <li>
-                            <a href="./empty.html?title=Bachelor">Master programmes</a>
-                        </li>
-                        <li>
-                            <a href="./empty.html?title=Continuing+education">Continuing education programmes</a>
-                        </li>
-                    </ul>
-                </div>
+                <aside role="complementary" id="complementary">
+                    <div class="p-4 mt-4 bg-white studies">
+                        <h1 class="text-primary mb-4 title">Studies</h1>
+                        <h2 class="font-weight-bold subtitle">Advance your scientific education</h2>
+                        <ul class="list-unstyled ml-3">
+                            <li>
+                                <a href="./empty.html?title=Bachelor">Bachelor programmes</a>
+                            </li>
+                            <li>
+                                <a href="./empty.html?title=Bachelor">Master programmes</a>
+                            </li>
+                            <li>
+                                <a href="./empty.html?title=Continuing+education">Continuing education programmes</a>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div class="p-4 mt-4 bg-white researches">
-                    <h1 class="text-primary mb-4 title">Researches</h1>
-                    <h2 class="font-weight-bold subtitle">Join our renowned research groups</h2>
-                    <ul class="list-unstyled ml-3">
-                        <li>
-                            <a href="./empty.html?title=Doctorate">Doctoral programmes</a>
-                        </li>
-                    </ul>
-                    <h2 class="font-weight-bold subtitle">Latest publications</h2>
-                    <ul class="list-unstyled ml-3">
-                        <li>
-                            <a href="./empty.html?title=Article">Tuo vero id quidem, inquam, arbitratu</a>
-                        </li>
-                        <li>
-                            <a href="./empty.html?title=Article">Quantum Aristoxeni ingenium consumptum videmus in
-                                musicis</a>
-                        </li>
-                        <li>
-                            <a href="./empty.html?title=Article">Mihi quidem Antiochum, quem audis, satis belle videris
-                                attendere</a>
-                        </li>
-                        <li>
-                            <a href="./empty.html?title=Article">Nec enim figura corporis nec ratio excellens ingenii
-                                humani significat ad unam hanc rem natum
-                                hominem, ut frueretur voluptatibus</a>
-                        </li>
-                        <li>
-                            <a href="./empty.html?title=Article">Atque haec ita iustitiae propria sunt, ut sint virtutum
-                                reliquarum communia</a>
-                        </li>
-                    </ul>
-                </div>
+                    <div class="p-4 mt-4 bg-white researches">
+                        <h1 class="text-primary mb-4 title">Researches</h1>
+                        <h2 class="font-weight-bold subtitle">Join our renowned research groups</h2>
+                        <ul class="list-unstyled ml-3">
+                            <li>
+                                <a href="./empty.html?title=Doctorate">Doctoral programmes</a>
+                            </li>
+                        </ul>
+                        <h2 class="font-weight-bold subtitle">Latest publications</h2>
+                        <ul class="list-unstyled ml-3">
+                            <li>
+                                <a href="./empty.html?title=Article">Tuo vero id quidem, inquam, arbitratu</a>
+                            </li>
+                            <li>
+                                <a href="./empty.html?title=Article">Quantum Aristoxeni ingenium consumptum videmus in
+                                    musicis</a>
+                            </li>
+                            <li>
+                                <a href="./empty.html?title=Article">Mihi quidem Antiochum, quem audis, satis belle
+                                    videris
+                                    attendere</a>
+                            </li>
+                            <li>
+                                <a href="./empty.html?title=Article">Nec enim figura corporis nec ratio excellens
+                                    ingenii
+                                    humani significat ad unam hanc rem natum
+                                    hominem, ut frueretur voluptatibus</a>
+                            </li>
+                            <li>
+                                <a href="./empty.html?title=Article">Atque haec ita iustitiae propria sunt, ut sint
+                                    virtutum
+                                    reliquarum communia</a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
             </div>
         </div>
     </main>
