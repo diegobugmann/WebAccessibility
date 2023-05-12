@@ -4,8 +4,8 @@
  */
 
 
-maxFontSize = 54;
-minFontSize = 8;
+maxFontSize = 46;
+minFontSize = 10;
 
 window.onload = function () {
     if (localStorage.getItem("body") != null) {
@@ -132,7 +132,7 @@ function decreaseFontSize() {
         currentFontSizeDecreaseButton = parseInt(window.getComputedStyle(buttonDecrease[1], null).fontSize);
     }
 
-    if (currentFontSizeTitle > minFontSize) {
+    if (currentFontSizeDecreaseButton > minFontSize) {
         currentFontSizeBody = --currentFontSizeBody
         localStorage.setItem("body", currentFontSizeBody)
         body.style.fontSize = currentFontSizeBody + 'px';
