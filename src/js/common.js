@@ -2,6 +2,154 @@
  * Open the current clicked menu and close the other menus
  * @param {object} event - The DOM event
  */
+
+
+maxFontSize = 54;
+minFontSize = 8;
+
+window.onload = function () {
+    if (localStorage.getItem("body") != null) {
+        currentFontSizeBody = localStorage.getItem("body")
+        currentFontSizeTitle = parseInt(localStorage.getItem("title"));
+        currentFontSizeSubTitle = parseInt(localStorage.getItem("subtitle"));
+        currentFontSizeButton = parseInt(localStorage.getItem("currentFontSizeButton"));
+
+        var body = document.body;
+        var title = document.getElementsByClassName('title');
+        var subtitle = document.getElementsByClassName('subtitle');
+        var buttonIncrease = document.getElementsByClassName('font-size-button');
+
+
+        body.style.fontSize = currentFontSizeBody + 'px';
+
+        for (var i = 0; i < title.length; i++) {
+            var elementTitle = title[i];
+            elementTitle.style.fontSize = currentFontSizeTitle + 'px';
+        }
+        for (var i = 0; i < subtitle.length; i++) {
+            var elementSubtitle = subtitle[i];
+            elementSubtitle.style.fontSize = currentFontSizeSubTitle + 'px';
+        }
+        for (var i = 0; i < buttonIncrease.length; i++) {
+            var elementButton = buttonIncrease[i];
+            elementButton.style.fontSize = currentFontSizeButton + 'px';
+        }
+    }
+}
+
+
+function increaseFontSize() {
+
+    // retrieving, and caching, the <body> element:
+    var body = document.body;
+    var title = document.getElementsByClassName('title');
+    var subtitle = document.getElementsByClassName('subtitle');
+    var buttonFontSize = document.getElementsByClassName('font-size-button');
+
+
+    if (localStorage.getItem("body") != null) {
+
+        currentFontSizeBody = parseInt(localStorage.getItem("body"));
+        currentFontSizeTitle = parseInt(localStorage.getItem("title"));
+        currentFontSizeSubTitle = parseInt(localStorage.getItem("subtitle"));
+        currentFontSizeButton = parseInt(localStorage.getItem("buttonIncrease"));
+
+    } else {
+        currentFontSizeBody = parseInt(window.getComputedStyle(body, null).fontSize);
+        currentFontSizeTitle = parseInt(window.getComputedStyle(title[0], null).fontSize);
+        currentFontSizeSubTitle = parseInt(window.getComputedStyle(subtitle[0], null).fontSize);
+        currentFontSizeButton = parseInt(window.getComputedStyle(buttonIncrease[0], null).fontSize);
+    }
+
+
+    if (currentFontSizeTitle < maxFontSize) {
+
+        currentFontSizeBody = ++currentFontSizeBody
+        localStorage.setItem("body", currentFontSizeBody)
+        body.style.fontSize = currentFontSizeBody + 'px';
+
+
+        for (var i = 0; i < title.length; i++) {
+            var element = title[i];
+            currentFontSizeTitle = ++currentFontSizeTitle
+            localStorage.setItem("title", currentFontSizeTitle)
+            element.style.fontSize = currentFontSizeTitle + 'px';
+        }
+        for (var i = 0; i < subtitle.length; i++) {
+            var elementSubtitle = subtitle[i];
+            currentFontSizeSubTitle = ++currentFontSizeSubTitle
+            localStorage.setItem("subtitle", currentFontSizeSubTitle)
+            elementSubtitle.style.fontSize = currentFontSizeSubTitle + 'px';
+        }
+        for (var i = 0; i < buttonIncrease.length; i++) {
+            var elementFontSizeButton = buttonIncrease[i];
+            currentFontSizeButton = ++currentFontSizeButton
+            localStorage.setItem("buttonIncrease", currentFontSizeButton)
+            elementFontSizeButton.style.fontSize = currentFontSizeButton + 'px';
+
+        }
+    }
+}
+
+function decreaseFontSize() {
+    var body = document.body;
+    var title = document.getElementsByClassName('title');
+    var subtitle = document.getElementsByClassName('subtitle');
+    var buttonIncrease = document.getElementsByClassName('font-increase-button');
+    var button2 = document.getElementsByClassName('font-decrease-button');
+
+
+    if (localStorage.getItem("body") != null) {
+
+        currentFontSizeBody = parseInt(localStorage.getItem("body"));
+        currentFontSizeTitle = parseInt(localStorage.getItem("title"));
+        currentFontSizeSubTitle = parseInt(localStorage.getItem("subtitle"));
+        currentFontSizeButton = parseInt(localStorage.getItem("buttonIncrease"));
+        currentFontSizeButton2 = parseInt(localStorage.getItem("button2"));
+
+    } else {
+        currentFontSizeBody = parseInt(window.getComputedStyle(body, null).fontSize);
+        currentFontSizeTitle = parseInt(window.getComputedStyle(title[i], null).fontSize);
+        currentFontSizeSubTitle = parseInt(window.getComputedStyle(subtitle[i], null).fontSize);
+        currentFontSizeButton = parseInt(window.getComputedStyle(buttonIncrease[0], null).fontSize);
+        currentFontSizeButton2 = parseInt(window.getComputedStyle(button2[0], null).fontSize);
+    }
+
+    if (currentFontSizeButton2 > minFontSize) {
+        currentFontSizeBody = --currentFontSizeBody
+        localStorage.setItem("body", currentFontSizeBody)
+        body.style.fontSize = currentFontSizeBody + 'px';
+
+
+        for (var i = 0; i < title.length; i++) {
+            var element = title[i];
+            currentFontSizeTitle = --currentFontSizeTitle
+            localStorage.setItem("title", currentFontSizeTitle)
+            element.style.fontSize = currentFontSizeTitle + 'px';
+        }
+        for (var i = 0; i < subtitle.length; i++) {
+            var elementS = subtitle[i];
+            currentFontSizeSubTitle = --currentFontSizeSubTitle
+            localStorage.setItem("subtitle", currentFontSizeSubTitle)
+            elementS.style.fontSize = currentFontSizeSubTitle + 'px';
+        }
+        for (var i = 0; i < buttonIncrease.length; i++) {
+            var elementB = buttonIncrease[i];
+            currentFontSizeSubButton = --currentFontSizeButton
+            localStorage.setItem("buttonIncrease", currentFontSizeButton)
+            elementB.style.fontSize = currentFontSizeButton + 'px';
+        }
+        for (var i = 0; i < button2.length; i++) {
+            var elementB = button2[i];
+            currentFontSizeSubButton2 = --currentFontSizeButton2
+            localStorage.setItem("button2", currentFontSizeButton2)
+            elementB.style.fontSize = currentFontSizeButton + 'px';
+        }
+    }
+
+}
+
+
 function openMenu(event) {
     event.stopPropagation();
     event.preventDefault();
@@ -98,19 +246,3 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.navbar-toggler')
         .addEventListener('click', toggleNavigation, false);
 }, false);
-
-const body = document.querySelector('body');
-const increaseButton = document.querySelector('.font-increase-button');
-const decreaseButton = document.querySelector('.font-decrease-button');
-
-increaseButton.addEventListener('click', () => {
-  body.style.fontSize = parseInt(getComputedStyle(body).fontSize) + 1 + 'px';
-  increaseButton.setAttribute('aria-pressed', 'true');
-  decreaseButton.setAttribute('aria-pressed', 'false');
-});
-
-decreaseButton.addEventListener('click', () => {
-  body.style.fontSize = parseInt(getComputedStyle(body).fontSize) - 1 + 'px';
-  decreaseButton.setAttribute('aria-pressed', 'true');
-  increaseButton.setAttribute('aria-pressed', 'false');
-});

@@ -36,10 +36,12 @@
                     <div class="btn-toolbar justify-content-end">
                         <div class="btn-group btn-group-sm">
                             <button class="btn btn-dark font-increase-button" id="font-increase-button"
-                                aria-label="Increase font size" aria-controls="body" aria-pressed="false">A+
+                                aria-label="Increase font size" aria-controls="body" aria-pressed="false"
+                                onclick="increaseFontSize()">A+
                             </button>
                             <button class="btn btn-dark font-decrease-button" id="font-decrease-button"
-                                aria-label="Decrease font size" aria-controls="body" aria-pressed="false">A-
+                                aria-label="Decrease font size" aria-controls="body" aria-pressed="false"
+                                onclick="decreaseFontSize()">A-
                             </button>
                         </div>
                     </div>
@@ -65,9 +67,8 @@
                             <a class="nav-link" href="./">Homepage</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-faculties"
-                                aria-haspopup="true" role="button"
-                                aria-expanded="false">Faculties</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-faculties" aria-haspopup="true"
+                                role="button" aria-expanded="false">Faculties</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a class="dropdown-item" href="./empty.html?title=Applied+sciences">Applied
@@ -96,9 +97,8 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-education"
-                                aria-haspopup="true" role="button"
-                                aria-expanded="false">Education &amp; research</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-education" aria-haspopup="true"
+                                role="button" aria-expanded="false">Education &amp; research</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a class="dropdown-item" href="./empty.html?title=Bachelor">Bachelor</a>
@@ -116,9 +116,8 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-industry"
-                                aria-haspopup="true" role="button"
-                                aria-expanded="false">Industry &amp; partners</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-industry" aria-haspopup="true"
+                                role="button" aria-expanded="false">Industry &amp; partners</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a class="dropdown-item" href="./empty.html?title=Public+relations">Public
@@ -161,7 +160,8 @@
             <div class="col-12 col-md-5 mt-4 login center">
                 <div class="p-4 mr-md-3 bg-white">
                     <h1 class="text-primary mb-4 title">Login</h1>
-                    <h2 class="text-danger mb-4 d-none subtitle" id="login-error" aria-live="assertive">Please correct the error(s)</h2>
+                    <h2 class="text-danger mb-4 d-none subtitle" id="login-error" aria-live="assertive">Please correct
+                        the error(s)</h2>
                     <ul class="sr-only" id="login-error-list"></ul>
                     <form id="login-form" novalidate>
                         <div class="form-group">

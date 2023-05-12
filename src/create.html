@@ -35,10 +35,12 @@
                     <div class="btn-toolbar justify-content-end">
                         <div class="btn-group btn-group-sm">
                             <button class="btn btn-dark font-increase-button" id="font-increase-button"
-                                aria-label="Increase font size" aria-controls="body" aria-pressed="false">A+
+                                aria-label="Increase font size" aria-controls="body" aria-pressed="false"
+                                onclick="increaseFontSize()">A+
                             </button>
                             <button class="btn btn-dark font-decrease-button" id="font-decrease-button"
-                                aria-label="Decrease font size" aria-controls="body" aria-pressed="false">A-
+                                aria-label="Decrease font size" aria-controls="body" aria-pressed="false"
+                                onclick="decreaseFontSize()">A-
                             </button>
                         </div>
                     </div>
@@ -64,9 +66,8 @@
                             <a class="nav-link" href="./">Homepage</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-faculties"
-                                aria-haspopup="true" role="button"
-                                aria-expanded="false">Faculties</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-faculties" aria-haspopup="true"
+                                role="button" aria-expanded="false">Faculties</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a class="dropdown-item" href="./empty.html?title=Applied+sciences">Applied
@@ -95,9 +96,8 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-education"
-                                aria-haspopup="true" role="button"
-                                aria-expanded="false">Education &amp; research</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-education" aria-haspopup="true"
+                                role="button" aria-expanded="false">Education &amp; research</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a class="dropdown-item" href="./empty.html?title=Bachelor">Bachelor</a>
@@ -115,9 +115,8 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-industry"
-                                aria-haspopup="true" role="button"
-                                aria-expanded="false">Industry &amp; partners</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-industry" aria-haspopup="true"
+                                role="button" aria-expanded="false">Industry &amp; partners</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a class="dropdown-item" href="./empty.html?title=Public+relations">Public
@@ -160,7 +159,8 @@
             <div class="col-12 col-md-7 mt-4 register center">
                 <div class="p-4 bg-white">
                     <h1 class="text-primary mb-4 title">Create new account</h1>
-                    <h2 class="text-danger mb-4 d-none subtitle" id="register-error" aria-live="assertive">Please correct the error(s)</h2>
+                    <h2 class="text-danger mb-4 d-none subtitle" id="register-error" aria-live="assertive">Please
+                        correct the error(s)</h2>
                     <ul class="sr-only" id="register-error-list"></ul>
                     <form id="register-form" novalidate>
                         <fieldset>

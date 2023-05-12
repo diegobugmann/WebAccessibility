@@ -36,10 +36,12 @@
                     <div class="btn-toolbar justify-content-end">
                         <div class="btn-group btn-group-sm">
                             <button class="btn btn-dark font-increase-button" id="font-increase-button"
-                                aria-label="Increase font size" aria-controls="body" aria-pressed="false">A+
+                                aria-label="Increase font size" aria-controls="body" aria-pressed="false"
+                                onclick="increaseFontSize()">A+
                             </button>
                             <button class="btn btn-dark font-decrease-button" id="font-decrease-button"
-                                aria-label="Decrease font size" aria-controls="body" aria-pressed="false">A-
+                                aria-label="Decrease font size" aria-controls="body" aria-pressed="false"
+                                onclick="decreaseFontSize()">A-
                             </button>
                         </div>
                     </div>
@@ -55,8 +57,8 @@
                     <img class="rounded-right" src="./img/logo.jpg" width="40" height="40"
                         alt="Lorem Ipsum Institute Logo">
                 </div>
-                <button class="navbar-toggler" type="button" aria-pressed="false" aria-label="navbar toggle button"
-                    id="nav-bar-button">
+                <button class="navbar-toggler bg-secondary" type="button" aria-pressed="false"
+                    aria-label="navbar toggle button" id="nav-bar-button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="nav-bar-content">
@@ -65,9 +67,8 @@
                             <a class="nav-link" href="./">Homepage</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-faculties"
-                                aria-haspopup="true" role="button"
-                                aria-expanded="false">Faculties</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-faculties" aria-haspopup="true"
+                                role="button" aria-expanded="false">Faculties</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a class="dropdown-item" href="./empty.html?title=Applied+sciences">Applied
@@ -96,9 +97,8 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-education"
-                                aria-haspopup="true" role="button"
-                                aria-expanded="false">Education &amp; research</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-education" aria-haspopup="true"
+                                role="button" aria-expanded="false">Education &amp; research</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a class="dropdown-item" href="./empty.html?title=Bachelor">Bachelor</a>
@@ -116,9 +116,8 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-industry"
-                                aria-haspopup="true" role="button"
-                                aria-expanded="false">Industry &amp; partners</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-industry" aria-haspopup="true"
+                                role="button" aria-expanded="false">Industry &amp; partners</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a class="dropdown-item" href="./empty.html?title=Public+relations">Public
