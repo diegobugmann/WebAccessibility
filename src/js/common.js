@@ -4,168 +4,107 @@
  */
 
 
-maxFontSize = 46;
-minFontSize = 10;
+maxAdjustor = 8;
+minAdjustor = -5;
+
+factorH1 = 2;
+factorH2 = 1.5;
+factorOthers = 1;
+
+relevantTags = ['p', 'h1', 'h2', 'a', 'button', 'label', 'input', 'select', 'small', 'table'];
 
 window.onload = function () {
-    if (localStorage.getItem("body") != null) {
-        currentFontSizeBody = localStorage.getItem("body")
-        currentFontSizeTitle = parseInt(localStorage.getItem("title"));
-        currentFontSizeSubTitle = parseInt(localStorage.getItem("subtitle"));
-        currentFontSizeIncreaseButton = parseInt(localStorage.getItem("fontSizeIncreaseButton"));
-        currentFontSizeDecreaseButton = parseInt(localStorage.getItem("fontSizeDecreaseButton"));
 
+    // fetch the sizeAdjustor from the local storage
+    if (localStorage.getItem("sizeAdjustor") != null) {
+        sizeAdjustor = parseInt(localStorage.getItem("sizeAdjustor"));
 
+        // Increase the font size for each relevant element
+        relevantTags.forEach(function(tagName) {
+            var elements = document.getElementsByTagName(tagName);
 
-        var body = document.body;
-        var title = document.getElementsByClassName('title');
-        var subtitle = document.getElementsByClassName('subtitle');
-        var buttonIncrease = document.getElementsByClassName('font-increase-button');
-        var buttonDecrease = document.getElementsByClassName('font-decrease-button');
-
-
-        body.style.fontSize = currentFontSizeBody + 'px';
-
-        for (var i = 0; i < title.length; i++) {
-            var elementTitle = title[i];
-            elementTitle.style.fontSize = currentFontSizeTitle + 'px';
-        }
-        for (var i = 0; i < subtitle.length; i++) {
-            var elementSubtitle = subtitle[i];
-            elementSubtitle.style.fontSize = currentFontSizeSubTitle + 'px';
-        }
-        for (var i = 0; i < buttonIncrease.length; i++) {
-            var elementButton = buttonIncrease[i];
-            elementButton.style.fontSize = currentFontSizeIncreaseButton + 'px';
-        }
-        for (var i = 0; i < buttonDecrease.length; i++) {
-            var elementButton = buttonDecrease[i];
-            elementButton.style.fontSize = currentFontSizeDecreaseButton + 'px';
-        }
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+                var computedStyle = window.getComputedStyle(element);
+                var currentSize = parseFloat(computedStyle.fontSize);
+                
+                if (tagName === 'h1') {
+                    element.style.fontSize = (currentSize + (factorH1 * sizeAdjustor)) + 'px';
+                } else if (tagName === 'h2') {
+                    element.style.fontSize = (currentSize + (factorH2 * sizeAdjustor)) + 'px';
+                } else {
+                    // if the element has id "article1-title", "article2-title" or "article3-title", don't increase the font size (they are already h2)
+                    if (element.id === 'article1-title' || element.id === 'article2-title' || element.id === 'article3-title') 
+                        continue;
+                    element.style.fontSize = (currentSize + (factorOthers * sizeAdjustor)) + 'px';
+                }
+            }
+        });
+    } else {
+        sizeAdjustor = 0;
+        localStorage.setItem("sizeAdjustor", sizeAdjustor);
     }
 }
 
 
+// Increase the font size for each relevant element
 function increaseFontSize() {
-
-    // retrieving, and caching, the <body> element:
-    var body = document.body;
-    var title = document.getElementsByClassName('title');
-    var subtitle = document.getElementsByClassName('subtitle');
-    var buttonIncrease = document.getElementsByClassName('font-increase-button');
-    var buttonDecrease = document.getElementsByClassName('font-decrease-button');
-
-
-    if (localStorage.getItem("body") != null) {
-
-        currentFontSizeBody = parseInt(localStorage.getItem("body"));
-        currentFontSizeTitle = parseInt(localStorage.getItem("title"));
-        currentFontSizeSubTitle = parseInt(localStorage.getItem("subtitle"));
-        currentFontSizeIncreaseButton = parseInt(localStorage.getItem("fontSizeIncreaseButton"));
-        currentFontSizeDecreaseButton = parseInt(localStorage.getItem("fontSizeDecreaseButton"));
-
+    if (sizeAdjustor < maxAdjustor) {
+        sizeAdjustor += 1;
+        localStorage.setItem("sizeAdjustor", sizeAdjustor);
     } else {
-        currentFontSizeBody = parseInt(window.getComputedStyle(body, null).fontSize);
-        currentFontSizeTitle = parseInt(window.getComputedStyle(title[0], null).fontSize);
-        currentFontSizeSubTitle = parseInt(window.getComputedStyle(subtitle[0], null).fontSize);
-        currentFontSizeIncreaseButton = parseInt(window.getComputedStyle(buttonIncrease[0], null).fontSize);
-        currentFontSizeDecreaseButton = parseInt(window.getComputedStyle(buttonDecrease[1], null).fontSize);
+        return;
     }
-
-
-    if (currentFontSizeTitle < maxFontSize) {
-
-        currentFontSizeBody = ++currentFontSizeBody
-        localStorage.setItem("body", currentFontSizeBody)
-        body.style.fontSize = currentFontSizeBody + 'px';
-
-
-        for (var i = 0; i < title.length; i++) {
-            var element = title[i];
-            currentFontSizeTitle = ++currentFontSizeTitle
-            localStorage.setItem("title", currentFontSizeTitle)
-            element.style.fontSize = currentFontSizeTitle + 'px';
+    relevantTags.forEach(function(tagName) {
+      var elements = document.getElementsByTagName(tagName);
+  
+      for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        var computedStyle = window.getComputedStyle(element);
+        var currentSize = parseFloat(computedStyle.fontSize);
+        
+        if (tagName === 'h1') {
+            element.style.fontSize = (currentSize + 2) + 'px';
+        } else if (tagName === 'h2') {
+            element.style.fontSize = (currentSize + 1.5) + 'px';
+        } else {
+            // if the element has id "article1-title", "article2-title" or "article3-title", don't increase the font size (they are already h2)
+            if (element.id === 'article1-title' || element.id === 'article2-title' || element.id === 'article3-title') 
+                continue;
+            element.style.fontSize = (currentSize + 1) + 'px';
         }
-        for (var i = 0; i < subtitle.length; i++) {
-            var elementSubtitle = subtitle[i];
-            currentFontSizeSubTitle = ++currentFontSizeSubTitle
-            localStorage.setItem("subtitle", currentFontSizeSubTitle)
-            elementSubtitle.style.fontSize = currentFontSizeSubTitle + 'px';
-        }
-        for (var i = 0; i < buttonIncrease.length; i++) {
-            var elementFontSizeButton = buttonIncrease[i];
-            currentFontSizeIncreaseButton = ++currentFontSizeIncreaseButton
-            localStorage.setItem("fontSizeIncreaseButton", currentFontSizeIncreaseButton)
-            elementFontSizeButton.style.fontSize = currentFontSizeIncreaseButton + 'px';
-        }
-
-        for (var i = 0; i < buttonDecrease.length; i++) {
-            var elementFontSizeButton = buttonDecrease[i];
-            currentFontSizeDecreaseButton = ++currentFontSizeDecreaseButton
-            localStorage.setItem("fontSizeDecreaseButton", currentFontSizeDecreaseButton)
-            elementFontSizeButton.style.fontSize = currentFontSizeDecreaseButton + 'px';
-        }
-    }
+      }
+    });
 }
 
+// Decrease the font size for each relevant element
 function decreaseFontSize() {
-    var body = document.body;
-    var title = document.getElementsByClassName('title');
-    var subtitle = document.getElementsByClassName('subtitle');
-    var buttonIncrease = document.getElementsByClassName('font-increase-button');
-    var buttonDecrease = document.getElementsByClassName('font-decrease-button');
-
-
-    if (localStorage.getItem("body") != null) {
-
-        currentFontSizeBody = parseInt(localStorage.getItem("body"));
-        currentFontSizeTitle = parseInt(localStorage.getItem("title"));
-        currentFontSizeSubTitle = parseInt(localStorage.getItem("subtitle"));
-        currentFontSizeIncreaseButton = parseInt(localStorage.getItem("fontSizeIncreaseButton"));
-        currentFontSizeDecreaseButton = parseInt(localStorage.getItem("fontSizeDecreaseButton"));
-
+    if (sizeAdjustor > minAdjustor) {
+        sizeAdjustor -= 1;
+        localStorage.setItem("sizeAdjustor", sizeAdjustor);
     } else {
-        currentFontSizeBody = parseInt(window.getComputedStyle(body, null).fontSize);
-        currentFontSizeTitle = parseInt(window.getComputedStyle(title[i], null).fontSize);
-        currentFontSizeSubTitle = parseInt(window.getComputedStyle(subtitle[i], null).fontSize);
-        currentFontSizeIncreaseButton = parseInt(window.getComputedStyle(buttonIncrease[0], null).fontSize);
-        currentFontSizeDecreaseButton = parseInt(window.getComputedStyle(buttonDecrease[1], null).fontSize);
+        return;
     }
-
-    if (currentFontSizeDecreaseButton > minFontSize) {
-        currentFontSizeBody = --currentFontSizeBody
-        localStorage.setItem("body", currentFontSizeBody)
-        body.style.fontSize = currentFontSizeBody + 'px';
-
-
-        for (var i = 0; i < title.length; i++) {
-            var element = title[i];
-            currentFontSizeTitle = --currentFontSizeTitle
-            localStorage.setItem("title", currentFontSizeTitle)
-            element.style.fontSize = currentFontSizeTitle + 'px';
-        }
-        for (var i = 0; i < subtitle.length; i++) {
-            var elementS = subtitle[i];
-            currentFontSizeSubTitle = --currentFontSizeSubTitle
-            localStorage.setItem("subtitle", currentFontSizeSubTitle)
-            elementS.style.fontSize = currentFontSizeSubTitle + 'px';
-        }
+    relevantTags.forEach(function(tagName) {
+      var elements = document.getElementsByTagName(tagName);
+  
+      for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        var computedStyle = window.getComputedStyle(element);
+        var currentSize = parseFloat(computedStyle.fontSize);
         
-        for (var i = 0; i < buttonIncrease.length; i++) {
-            var elementFontSizeButton = buttonIncrease[i];
-            currentFontSizeIncreaseButton = --currentFontSizeIncreaseButton
-            localStorage.setItem("fontSizeIncreaseButton", currentFontSizeIncreaseButton)
-            elementFontSizeButton.style.fontSize = currentFontSizeIncreaseButton + 'px';
+        if (tagName === 'h1') {
+            element.style.fontSize = (currentSize - 2) + 'px';
+        } else if (tagName === 'h2') {
+            element.style.fontSize = (currentSize - 1.5) + 'px';
+        } else {
+            // if the element has id "article1-title", "article2-title" or "article3-title", don't increase the font size (they are already h2)
+            if (element.id === 'article1-title' || element.id === 'article2-title' || element.id === 'article3-title') 
+                continue;
+            element.style.fontSize = (currentSize - 1) + 'px';
         }
-
-        for (var i = 0; i < buttonDecrease.length; i++) {
-            var elementFontSizeButton = buttonDecrease[i];
-            currentFontSizeDecreaseButton = --currentFontSizeDecreaseButton
-            localStorage.setItem("fontSizeDecreaseButton", currentFontSizeDecreaseButton)
-            elementFontSizeButton.style.fontSize = currentFontSizeDecreaseButton + 'px';
-        }
-    }
-
+      }
+    });
 }
 
 
